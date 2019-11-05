@@ -18,9 +18,8 @@
             text-align: center;
         }
 
-        .logo-img {
-            height: 50px;
-            width: 145px;
+       .logo-img {
+            height: 60px;
         }
 
         .content {
@@ -67,7 +66,7 @@
 <body>
     <div class="main-block">
         <div class="logo">
-            <img class="logo-img" src="https://storage.googleapis.com/openware-assets/logo.png" />
+            <img class="logo-img" src="https://i.ibb.co/FwWjRC0/Logomarkjdax.png" />
         </div>
         <div class="content">
             <p class="text">New {{ .record.currency }} beneficiary <b>{{ .record.name }}</b> created!</p>

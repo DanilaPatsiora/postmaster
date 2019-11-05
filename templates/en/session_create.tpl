@@ -19,8 +19,7 @@
         }
 
         .logo-img {
-            height: 50px;
-            width: 145px;
+            height: 60px;
         }
 
         .content {
@@ -48,7 +47,7 @@
         }
 
         .reset-button {
-            background: #3C78E0;
+            background: #05C0C9;
             margin-left: 172px;
             height: 40px;
             width: 163px;
@@ -74,7 +73,7 @@
 <body>
     <div class="main-block">
         <div class="logo">
-            <img class="logo-img" src="https://storage.googleapis.com/openware-assets/logo.png" />
+             <img class="logo-img" src="https://i.ibb.co/FwWjRC0/Logomarkjdax.png" />
         </div>
         <div class="content">
             <p class="title">Hello!</p>
