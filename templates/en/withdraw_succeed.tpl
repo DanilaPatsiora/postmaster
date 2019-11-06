@@ -47,18 +47,8 @@
         }
 
         a {
-            color: #FFFFFF;
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 40px;
             display: inline-block;
-            align-items: center;
-            text-align: center;
             text-decoration: none;
-            height: 40px;
-            width: 163px;
         }
     </style>
 </head>
@@ -69,9 +59,44 @@
             <img class="logo-img" src="https://i.ibb.co/FwWjRC0/Logomarkjdax.png" />
         </div>
         <div class="content">
-            <p class="text">Withdrawal <b>{{ .record.state }}</b></p>
+            <p class="title">Hello!</p>
+            {{ if eq .record.currency "zar" }}
+                <p class="text">
+                    This is to confirm that you have withdrawn {{ .record.amount }} ZAR from your JDAX Wallet to bank account {{ .record.rid }}
+                </p>
+                <p class="text">
+                    If you did not authorise this withdrawal, please <a href="https://jdaxsup.zendesk.com/hc/en-us/requests/new">report it</a> immediately.
+                </p>
+            {{ else if eq .record.currency "btc" }}
+                <p class="text">
+                    This is to confirm the following transaction:
+                </p>
+                <p class="text">
+                    RECEIVED BTC:<br>
+                    Amount: {{ .record.amount }} BTC<br>
+                    Address: {{ .record.rid }}<br>
+                    State: {{ .record.state }}<br>
+                </p>
+            {{ else if eq .record.currency "eth" }}
+                <p class="text">
+                    This is to confirm the following transaction:
+                </p>
+                <p class="text">
+                    RECEIVED ETH:<br>
+                    Amount: {{ .record.amount }} ETH<br>
+                    Address: {{ .record.rid }}<br>
+                    State: {{ .record.state }}<br>
+                </p>
+            {{ else }}
+                <p class="text">Withdrawal <b>{{ .record.state }}</b></p>
+                <p class="text">
+                    Your withdrawal #{{ .record.tid }} of {{ .record.amount }} {{ .record.currency }} has been {{ .record.state }}.
+                </p>
+            {{ end }}
+            <p class="text">Thank you</p>
+            <p class="text">The JDAX Team</p>
             <p class="text">
-                Your withdrawal #{{ .record.tid }} of {{ .record.amount }} {{ .record.currency }} has been {{ .record.state }}.
+                Please feel free to contact our dedicated <a href="https://jdaxsup.zendesk.com/hc/en-us/requests/new">Customer Care and Support Team</a> and submit a request should you require any help.
             </p>
         </div>
     </div>

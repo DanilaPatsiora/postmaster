@@ -52,20 +52,10 @@
             height: 40px;
             width: 163px;
         }
-
+        
         a {
-            color: #FFFFFF;
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 16px;
-            line-height: 40px;
             display: inline-block;
-            align-items: center;
-            text-align: center;
             text-decoration: none;
-            height: 40px;
-            width: 163px;
         }
     </style>
 </head>
@@ -77,25 +67,50 @@
         </div>
         <div class="content">
             <p class="title">Hello!</p>
-
-            <p class="text">
-                We detected an update of your account details.
-            </p>
-
-            <p class="text">
-            {{ if eq .record.key "phone" }}
-                Your phone number was {{ .record.value }}.
+            {{ if eq .record.key "email" }}
+                <p class="text">
+                    Congratulations for passing Step 1 verification by confirming your email address. As a reminder, this permits you to a maximum of R5000 withdrawals with JDAX.
+                </p>
+                <p class="text">
+                    We recommend that you go through Step 2 (Mobile phone number) and Step 3 (Identity Document) verification in order to acquire higher withdrawal limits with JDAX and experience all that JDAX has to offer.
+                </p>
+                <p class="text">
+                    This can be done by going to <a href="https://stage.jdax.co.za/profile">“Manage Account”</a> after logging into your JDAX account.
+                </p>
+                <p class="text">
+                        If you would like more information on the 3 Step Verification, please <a href="https://stage.jdax.co.za/information_kit">click here</a>. 
+                </p>
             {{ end }}
-            {{ if eq .record.key "profile" }}
-                Your user profile was {{ .record.value }}.
+            {{ if eq .record.key "phone" }}
+                <p class="text">
+                        Congratulations for passing Step 2 verification by confirming your mobile number and basic profile information. As a reminder, this permits you to a maximum of R15000 withdrawals with JDAX.
+                </p>
+                <p class="text">
+                   We recommend that you go through Step 3 (Identity Document) verification in order to acquire full Unlimited withdrawals with JDAX and experience all that JDAX has to offer.
+                </p>
+                <p class="text">
+                    This can be done by going to <a href="https://stage.jdax.co.za/profile">“Manage Account”</a> after logging into your JDAX account.
+                </p>
+                <p class="text">
+                        If you would like more information on the 3 Step Verification, please <a href="https://stage.jdax.co.za/information_kit">click here</a>. 
+                </p>
             {{ end }}
             {{ if eq .record.key "document" }}
-                Your main document was {{ .record.value }}.
+                <p class="text">
+                    Congratulations for passing Step 3 of your verification process. This now permits you to have Unlimited withdrawals with JDAX and experience all that JDAX has to offer.
+                </p>
+                <p class="text">
+                    As a reminder, in order start trading and investing immediately, go to your Wallet <a href="https://stage.jdax.co.za/wallets">here</a> and either deposit Rands, or receive your cryptocurrency of choice form another wallet.
+                </p>
+                <p class="text">
+                    If you would like more information on this process, please <a href="https://stage.jdax.co.za/information_kit">click here</a>. 
+                </p>
             {{ end }}
+            <p class="text">Thank you</p>
+            <p class="text">The JDAX Team</p>
+            <p class="text">
+                Please feel free to contact our dedicated <a href="https://jdaxsup.zendesk.com/hc/en-us/requests/new">Customer Care and Support Team</a> and submit a request should you require any help.
             </p>
-
-            <p class="text">Level: {{ .record.user.level }}</p>
-            <p class="text">State: {{ .record.user.state }}</p>
         </div>
     </div>
 </body>
